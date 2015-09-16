@@ -6,6 +6,8 @@
  * Time: 오후 6:30
  */
 
+$myPin = 1234;
+
 ?>
 
 <!doctype html>
@@ -26,10 +28,14 @@
                 $("#kingsImg").css({
                    visibility : "hidden"
                 });
+               console.log(this);
+               console.log($(this).text());
+               $(this).text('Show');
            }else{
                $("#kingsImg").css({
                    visibility : "visible"
                });
+               $(this).text('Hidden');
            }
        });
 
@@ -43,6 +49,7 @@
 </nav>
 
 <section>
+    <h3>Display on-off</h3>
     <button id="switch">Show</button>
     <div><img id="kingsImg" src="http://boardm.godohosting.com/i2eye/goods_new/2015/02/israel.png" style="visibility: hidden;"></div>
 </section>

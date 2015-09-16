@@ -18,7 +18,7 @@ var_dump($private_key);
 <body>
 
 <div>
-	<h2>Main</h2>
+	<h2>Be a Game Developer</h2>
 
     <dl>
         <dt>Display</dt>
@@ -40,6 +40,8 @@ var_dump($private_key);
     <dl>
         <dt>Small Application</dt>
         <dd><a href="./smallapp-calculator.php">calculator</a></dd>
+        <dd>Drag-Drop Game (예수님 족보 순서대로 사람들 이미지를 드랙-드랍한 뒤 순서가 맞는지 체크</dd>
+        <dd>객관식 퀴즈</dd>
         <dd>주사위</dd>
         <dd>윳놀이</dd>
     </dl>
