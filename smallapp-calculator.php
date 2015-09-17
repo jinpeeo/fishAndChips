@@ -26,11 +26,20 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
+
+    //todo : 연산자 버튼을 클릭 할 때 마다 label 에 해당 연산자 디스플레이 처리
+    $("#opHandler>input[type='button']").click(function(){
+        console.log(this.value);
+        $("#opLabel").text(this.value);
+
+    });
+
+    //todo : 계산 버튼 클릭 했을 때의 처리
     $("#run").click(function() {
         var form_data = {
             ip1 : $("#input1").val(),
             ip2 : $("#input2").val(),
-            op : $("#operator").val(),
+            op : $("#opLabel").text(),
             is_ajax : 1
         };
 
@@ -57,7 +66,7 @@ $(document).ready(function(){
    1. 숫자 입력 텍스트박스에서 포커스 아웃 시 operand 영역에 숫자 디스플레이
       입력하지 않거나 유효하지 않은 값은 밸리데이션
    2. 연산자 버튼 클릭하면 operator span 에 연산자 보여주기
-   3.
+   3. 전체 리셋과 피연산자1,2,연산자 각각 리셋 기
 
 */
 
@@ -68,32 +77,28 @@ $(document).ready(function(){
 </head>
 
 <nav>
-    <h2><a href="./index.php">Home</a></h2>
+    <h1><a href="./index.php">Home</a></h1>
 </nav>
 <main>
     <section>
-        <h3>Calculator</h3>
+        <h2>Calculator</h2>
         <form>
-        <input id="input1" type="text" size="10">
-        <input id="operator" type="text" list="oplist" size="15">
-        <input type="button" value="+" class="btn-lg">
-        <input type="button" value="-" class="btn-lg">
-        <input type="button" value="*" class="btn-lg">
-        <input type="button" value="/" class="btn-lg">
-        <datalist id="oplist">
-            <option value="plus" label="+">
-            <option value="minus" label="-">
-            <option value="multiplication" label="*">
-            <option value="division" label="/">
-        </datalist>
-        <input id="input2" type="text" size="10">
-        <button id="run" >Calculate</button>
+            <input id="input1" type="text" size="10">
+            <span id="opLabel">Operator</span>
+            <input id="input2" type="text" size="10">
+            <button id="run" >Calculate</button>
+            <div id="opHandler">
+                <input type="button" id="btnPlus" value="+" class="btn-lg">
+                <input type="button" id="btnMinus" value="-" class="btn-lg">
+                <input type="button" id="btnMultiply" value="*" class="btn-lg">
+                <input type="button" id="btnDivision" value="/" class="btn-lg">
+            </div>
         </form>
         <div>
             <span id="operand1"></span>
             <span id="operator"></span>
             <span id="operand2"></span> =
-            <span id="result"></span>
+            <h3 id="result"></h3>
         </div>
     </section>
 </main>

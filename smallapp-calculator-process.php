@@ -13,19 +13,19 @@ $rs = 0;
 
 switch($_POST['op']){
 
-    case "plus" :
+    case "+" :
         $rs = $_POST['ip1'] + $_POST['ip2'];
     break;
 
-    case "minus" :
+    case "-" :
         $rs = $_POST['ip1'] - $_POST['ip2'];
     break;
 
-    case "multiplication" :
+    case "*" :
         $rs = $_POST['ip1'] * $_POST['ip2'];
     break;
 
-    case "division" :
+    case "-" :
         $rs = $_POST['ip1'] / $_POST['ip2'];
     break;
 
