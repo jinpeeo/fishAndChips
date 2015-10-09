@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<h1>Javascript Can Validation</h1>
+
+<p>Please input a number between 0 and 10 : </p>
+
+<input id="numb" type="number">
+<button type="button" onclick="myFunc()">Submit</button>
+<p id="demo"></p>
+
+<script>
+    function myFunc() {
+        console.log("in my Function");
+        var x, text;
+
+        //Get the value of the input field with id="numb"
+        x = document.getElementById("numb").value;
+        console.log(x);
+        if(isNaN(x) || x < 1 || x > 10){
+            text = "Input not valid";
+        }else{
+            text = "Input OK."
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+</script>
+
+</body>
+</html>

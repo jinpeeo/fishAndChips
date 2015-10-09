@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by G.I.V.
- * User: JP a.k.a Londoner
+ * Developer: JP a.k.a Londoner
  * Date: 15. 9. 7.
  * Time: 오후 8:26
  */
@@ -23,6 +23,11 @@
 <!-- 부트스트랩 스타일시트 로드 -->
 <link href="bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
+<style>
+body{margin: 0 20px}
+</style>
+
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
@@ -31,6 +36,7 @@ $(document).ready(function(){
     $("#opHandler>input[type='button']").click(function(){
         console.log(this.value);
         $("#opLabel").text(this.value);
+        $("#operator").text(this.value);
 
     });
 
@@ -51,6 +57,7 @@ $(document).ready(function(){
                 if(response != ''){
                     console.log(response);
                     $("#result").text(response);
+                    $("#equal").css({"display":"inline"});
                 }else{
                     console.log("fail");
                 }
@@ -61,6 +68,15 @@ $(document).ready(function(){
 
     return false; //ajax 통신 후에 form submit 방지
     });
+
+
+    $("#input1").blur(function(){
+        $("#operand1").text(this.value);
+    })
+
+    $("#input2").blur(function(){
+        $("#operand2").text(this.value);
+    })
 
 /* 더 구현해야 할것들
    1. 숫자 입력 텍스트박스에서 포커스 아웃 시 operand 영역에 숫자 디스플레이
@@ -76,6 +92,7 @@ $(document).ready(function(){
 </script>
 </head>
 
+<body>
 <nav>
     <h1><a href="./index.php">Home</a></h1>
 </nav>
@@ -87,21 +104,22 @@ $(document).ready(function(){
             <span id="opLabel">Operator</span>
             <input id="input2" type="text" size="10">
             <button id="run" >Calculate</button>
-            <div id="opHandler">
+            <div id="opHandler" style="margin: 20px 0">
                 <input type="button" id="btnPlus" value="+" class="btn-lg">
                 <input type="button" id="btnMinus" value="-" class="btn-lg">
                 <input type="button" id="btnMultiply" value="*" class="btn-lg">
                 <input type="button" id="btnDivision" value="/" class="btn-lg">
             </div>
         </form>
-        <div>
+        <div style="margin: 20px 0; font-size: 30px; color:blue">
             <span id="operand1"></span>
             <span id="operator"></span>
-            <span id="operand2"></span> =
-            <h3 id="result"></h3>
+            <span id="operand2"></span>
+            <span id="equal" style="display: none"> = </span>
+            <span id="result"></span>
         </div>
     </section>
 </main>
 
-
+</body>
 </html>

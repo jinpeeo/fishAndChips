@@ -24,6 +24,12 @@ var_dump($private_key);
         <dt>Display</dt>
         <dd><a href="./display-onoff.php">display on-off</a></dd>
         <dd>animate</dd>
+        <dd><a href="./loadphpinto.php">Load a PHP page into a div</a></dd>
+    </dl>
+    <dl>
+        <dt>selector</dt>
+        <dd><a href="selector-tree-pseudo.php">selector-tree-pseudo 트리 구조적 가상클래스를 이용한 셀렉터 </a></dd>
+        <dd><a href="selector-descendant-combinator.php">selector-descendant-combinator 하위 요소 조합</a></dd>
     </dl>
     <dl>
         <dt>Form</dt>
@@ -44,6 +50,10 @@ var_dump($private_key);
         <dd>객관식 퀴즈</dd>
         <dd>주사위</dd>
         <dd>윳놀이</dd>
+    </dl>
+    <dl>
+        <dt>GNN Works</dt>
+        <dl><a href="works-jsonmaker.php">jSON Payloads Maker for Push Alert</dl>
     </dl>
 
 
